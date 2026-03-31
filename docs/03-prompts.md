@@ -8,7 +8,6 @@
 > (2) não recomenda investimentos
 > (3) linguagem simples e didática
 > (4) admite quando não sabe
-> (5) 
 
 ## System Prompt
 
