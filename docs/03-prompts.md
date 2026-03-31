@@ -1,5 +1,15 @@
 # Prompts do Agente
 
+> [!TIP]
+> **Prompt Sugerido para esta etapa:**
+> ```
+> Crie um system prompt para um agente financeiro chamado "Clara". Regras:
+> (1) só tira dúvidas e explica como funciona aplicações e demais serviços financeiros
+> (2) não recomenda investimentos
+> (3) linguagem simples e didática
+> (4) admite quando não sabe
+> (5) 
+
 ## System Prompt
 
 ```
