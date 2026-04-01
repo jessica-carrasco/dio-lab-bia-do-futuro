@@ -10,7 +10,7 @@ Desenvolver um agente de Inteligência Artificial capaz de auxiliar usuários co
 
 Foi identificado o desafio de acessibilidade na compreensão de informações financeiras, especialmente para usuários com pouca experiência em tecnologia ou termos bancários.
 
-**Público-alvo definido:**
+## Público-alvo definido: ##
 - Usuários iniciantes em aplicativos bancários  
 - Pessoas com dificuldade de interpretação financeira  
 - Usuários que preferem comunicação simples e objetiva  
