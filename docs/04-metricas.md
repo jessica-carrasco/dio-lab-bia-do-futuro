@@ -53,10 +53,14 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
+- O agente rodou localmente, mas o tempo de resposta ultrapassou 5 minutos
+- O agente apresentou uma resposta inicial, mas foi muito extensa
 
 **O que pode melhorar:**
-- [Liste aqui]
+- Realizar testes via API
+- Revisitar os prompts
+- Realizar novos testes localmente
+- Solicitar que outros usuários façam testes
 
 ---
 
