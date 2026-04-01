@@ -1,116 +1,153 @@
-## Objetivo do Projeto
+# 🤖 Agente Financeiro Inteligente com IA Generativa
 
-Desenvolver um agente de Inteligência Artificial capaz de auxiliar usuários com baixa familiaridade digital e financeira, oferecendo suporte para dúvidas do dia a dia relacionadas a serviços bancários, utilizando linguagem simples, acessível e didática.
+## Contexto
 
----
+Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
 
-## Etapas Desenvolvidas
+- **Antecipar necessidades** ao invés de apenas responder perguntas
+- **Personalizar** sugestões com base no contexto de cada cliente
+- **Cocriar soluções** financeiras de forma consultiva
+- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
 
-### 1. Definição do Problema e Público-Alvo
-
-Foi identificado o desafio de acessibilidade na compreensão de informações financeiras, especialmente para usuários com pouca experiência em tecnologia ou termos bancários.
-
-## Público-alvo definido: ##
-- Usuários iniciantes em aplicativos bancários  
-- Pessoas com dificuldade de interpretação financeira  
-- Usuários que preferem comunicação simples e objetiva  
+> [!TIP]
+> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
 
 ---
 
-### 2. Estruturação da Arquitetura do Agente
+## O Que Você Deve Entregar
 
-Foi construído um fluxo estruturado contemplando:
+### 1. Documentação do Agente
 
-- Interface de interação com o usuário  
-- Construção de prompt (Prompt Engineering)  
-- Processamento via modelo de linguagem (LLM)  
-- Integração com base de conhecimento (RAG)  
-- Validação e segurança das respostas  
-- Loop de interação contínua  
+Defina **o que** seu agente faz e **como** ele funciona:
 
-Essa arquitetura permitiu simular um cenário mais próximo de aplicações reais.
+- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
+- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
+- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
+- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
 
----
-
-### 3. Definição de Prompt e Regras do Agente
-
-Foram estabelecidas diretrizes claras para o comportamento do agente:
-
-- Uso de linguagem simples e acessível  
-- Respostas curtas e didáticas  
-- Tom acolhedor e não julgador  
-- Proibição de aconselhamento financeiro avançado  
-- Regras de segurança (não solicitar dados sensíveis)  
-
-Além disso, foi adotada uma abordagem centrada no usuário, priorizando clareza sobre tecnicidade.
+📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
 
 ---
 
-### 4. Criação de Cenários de Uso
+### 2. Base de Conhecimento
 
-Foram desenvolvidos cenários práticos para simular interações reais, como:
+> [!TIP]
+> 
+> **Prompt Sugerido para esta etapa:** preciso organizar a base de conhecimento do meu agente financeiro educativo. Tenho estes arquivos de dados: [liste os arquivos]. Me ajude a: (1) entender o que cada arquivo contém, (2) decidir como usar cada um, (3) criar um exemplo de contexto formatado para incluir no prompt.
 
-- Dúvidas sobre saldo disponível  
-- Funcionamento da fatura do cartão de crédito  
-- Situações de saldo negativo  
+Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
 
-Esses cenários ajudaram a validar a capacidade do agente de traduzir conceitos financeiros para linguagem simples.
+| Arquivo | Formato | Descrição |
+|---------|---------|-----------|
+| `transacoes.csv` | CSV | Histórico de transações do cliente |
+| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
+| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
+| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
 
----
+Você pode adaptar ou expandir esses dados conforme seu caso de uso.
 
-### 5. Tratamento de Edge Cases
-
-Foram mapeadas situações fora do fluxo ideal, incluindo:
-
-- Perguntas fora do escopo  
-- Solicitações de aconselhamento financeiro  
-- Tentativas de compartilhamento de dados sensíveis  
-
-O agente foi configurado para responder com segurança, mantendo o foco no escopo definido.
+📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
 
 ---
 
-## Testes e Validação
+### 3. Prompts do Agente
 
-### Resultados observados
+Documente os prompts que definem o comportamento do seu agente:
 
-**Pontos positivos:**
-- O agente foi executado com sucesso em ambiente local  
-- Demonstrou capacidade de resposta coerente e contextualizada  
-- Aplicou corretamente linguagem simplificada  
+- **System Prompt:** Instruções gerais de comportamento e restrições
+- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
+- **Tratamento de Edge Cases:** Como o agente lida com situações limite
 
-**Pontos de atenção:**
-- Tempo de resposta elevado (superior a 5 minutos)  
-- Respostas iniciais excessivamente longas  
+📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
 
 ---
 
-## Melhorias Identificadas
+### 4. Aplicação Funcional
 
-Com base nos testes realizados, foram levantadas oportunidades de evolução:
+Desenvolva um **protótipo funcional** do seu agente:
 
-- Otimização de desempenho (tempo de resposta)  
-- Refinamento dos prompts para respostas mais objetivas  
-- Realização de testes via API para maior controle e escalabilidade  
-- Validação com usuários reais para coleta de feedback  
-- Iteração contínua com novos testes locais  
+- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
+- Integração com LLM (via API ou modelo local)
+- Conexão com a base de conhecimento
 
----
-
-## Próximos Passos
-
-Para evolução do projeto, recomenda-se:
-
-- Implementar testes automatizados do agente  
-- Ajustar o prompt para controle de tamanho das respostas  
-- Monitorar métricas de qualidade (clareza, tempo de resposta)  
-- Expandir a base de cenários e edge cases  
-- Explorar integração com interfaces mais amigáveis (ex: chatbot web)
+📁 **Pasta:** [`src/`](./src/)
 
 ---
 
-## Conclusão
+### 5. Avaliação e Métricas
 
-O projeto demonstrou, na prática, a aplicação dos conceitos de IA Generativa, incluindo Prompt Engineering, estruturação de agentes e boas práticas de segurança.
+Descreva como você avalia a qualidade do seu agente:
 
-Além disso, evidenciou o potencial da IA como ferramenta de inclusão digital e financeira, ao tornar informações complexas mais acessíveis para diferentes perfis de usuários.
+**Métricas Sugeridas:**
+- Precisão/assertividade das respostas
+- Taxa de respostas seguras (sem alucinações)
+- Coerência com o perfil do cliente
+
+📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
+
+---
+
+### 6. Pitch
+
+Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
+
+- Qual problema seu agente resolve?
+- Como ele funciona na prática?
+- Por que essa solução é inovadora?
+
+📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+
+---
+
+## Ferramentas Sugeridas
+
+Todas as ferramentas abaixo possuem versões gratuitas:
+
+| Categoria | Ferramentas |
+|-----------|-------------|
+| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
+| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
+| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
+| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+
+---
+
+## Estrutura do Repositório
+
+```
+📁 lab-agente-financeiro/
+│
+├── 📄 README.md
+│
+├── 📁 data/                          # Dados mockados para o agente
+│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
+│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
+│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
+│   └── transacoes.csv                # Histórico de transações (CSV)
+│
+├── 📁 docs/                          # Documentação do projeto
+│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
+│   ├── 02-base-conhecimento.md       # Estratégia de dados
+│   ├── 03-prompts.md                 # Engenharia de prompts
+│   ├── 04-metricas.md                # Avaliação e métricas
+│   └── 05-pitch.md                   # Roteiro do pitch
+│
+├── 📁 src/                           # Código da aplicação
+│   └── app.py                        # (exemplo de estrutura)
+│
+├── 📁 assets/                        # Imagens e diagramas
+│   └── ...
+│
+└── 📁 examples/                      # Referências e exemplos
+    └── README.md
+```
+
+---
+
+## Dicas Finais
+
+1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
+2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
+3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
+4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
+5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
