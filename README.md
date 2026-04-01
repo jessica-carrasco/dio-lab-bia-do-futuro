@@ -1,3 +1,5 @@
+# Projeto - Agente de IA para Suporte Financeiro Simplificado
+
 ## Objetivo do Projeto
 
 Desenvolver um agente de Inteligência Artificial capaz de auxiliar usuários com baixa familiaridade digital e financeira, oferecendo suporte para dúvidas do dia a dia relacionadas a serviços bancários, utilizando linguagem simples, acessível e didática.
